@@ -8,7 +8,7 @@ const authMiddleware = require('../middlewares/auth.middleware');
 router.post('/publier', authMiddleware, liens.creationNouveauLivre);
 
 // Lire tous les livres
-router.get('/voir', authMiddleware, liens.voirLivre);
+router.get('/voir', liens.voirLivre);
 
 // Mettre à jour un livre
 router.put('/voir:id', authMiddleware, liens.mettreAJourLivre);
