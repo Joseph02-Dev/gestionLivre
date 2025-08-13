@@ -31,8 +31,9 @@ exports.voirLivre = async (req, res) => {
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
 
-    const totalLivre = await Livre.countDocuments({ utilisateur: req.user.id });
-    const livres = await Livre.find({ utilisateur: req.user.id })
+    // On retire la restriction par utilisateur
+    const totalLivre = await Livre.countDocuments();
+    const livres = await Livre.find()
       .skip(skip)
       .limit(limit)
       .sort({ createdAt: -1 });
