@@ -21,7 +21,7 @@ app.use(express.json())
 app.use('/api/auth', authRoutes);
 app.use('/api/livre', livreRoutes);
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`♨️ ♨️  Server lancé sur le port ${port}`)}  
+
+app.listen(process.env.PORT, () => {
+    console.log(`♨️ ♨️  Server lancé sur le port ${process.env.PORT}`)}  
 )
